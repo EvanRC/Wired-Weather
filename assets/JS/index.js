@@ -6,9 +6,9 @@ var city = "";
 var citySearch = document.querySelector("#citySearch");
 var searchButton = document.querySelector("#searchButton");
 var clearButton = document.querySelector("#clearButton");
-var cityName = document.querySelector("cityName");
-var currentTemperature = document.querySelector("temperature");
-var currentWindSpeed = document.querySelector("windspeed");
+var cityName = document.querySelector("#cityName");
+var currentTemperature = document.querySelector("#temperature");
+var currentWindSpeed = document.querySelector("#windSpeed");
 var currentHumidity = document.querySelector("#humidity");
 
 //retrieved stored cities from the locl stroage
@@ -16,7 +16,9 @@ var storedCities = localStorage.getItem("Cities");
 var sCity = storedCities ? JSON.parse(storedCities) : [];
 
 //event listener added for the search button
-searchButton.addEventListener("click", function () {
+searchButton.addEventListener('click', searchCity);
+
+clearButton.addEventListener("click", function () {
     //removes cities from local storage
     localStorage.removeItem("Cities");
 
@@ -47,7 +49,7 @@ function getWeatherData(city) {
             //retrieves the desired weather info from openweather
             var temperature = data.main.temp;
             var windSpeed = data.wind.speed;
-            var windSpeed = data.main.humitdity;
+            var humidity = data.main.humidity;
 
             //creates dynamic html elements 
             cityName.innerText = data.name;
@@ -81,17 +83,17 @@ function getFiveDayWeatherData(city) {
 
         .then(function (data) {
             console.log(data);
-            var htmlForecastCards = `<div class='row>`;
-            for (let index = 0; index < data.list.length; index = index + 8) {
+            var htmlForecastCards = `<div class='row'>`;
+            for (let i = 0; i < data.list.length; i = i + 8) {
                 htmlForecastCards += `
             <div class="col-sm-2 forecast">
-            <p>${dayjs(data.list[index].dt_txt).format('MM/DD/YYYY')}</p>
+            <p>${dayjs(data.list[i].dt_txt).format('MM/DD/YYYY')}</p>
             <p></p>
-            <p>Temperature: <span>${data.list[index].main.temp} \u00B0F </span>
+            <p>Temperature: <span>${data.list[i].main.temp} \u00B0F </span>
             <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png">
             </p>
-            <p>Wind Speed: <span class="windSpeed">${data.list[index].wind.speed}mph</span></p>
-            <p>Humidity: <span>${data.list[index].main.humidity}%</span></p>
+            <p>Wind Speed: <span class="windSpeed">${data.list[i].wind.speed}mph</span></p>
+            <p>Humidity: <span>${data.list[i].main.humidity}%</span></p>
             </div>`;
 
             }
@@ -99,7 +101,7 @@ function getFiveDayWeatherData(city) {
             document.getElementById("futureForecast").innerHTML = htmlForecastCards;
         })
 
-        .catch(function (error) {
+        .catch(function(error) {
             //handles error response
             console.log("error: " + error.message);
         })
@@ -151,11 +153,11 @@ function renderPreviousSearch() {
 
     });
 
-    if (sCity.length > 0) {
+    if(sCity.length > 0) {
         var lastSearchedCity = sCity[sCity.length - 1];
         getWeatherData(lastSearchedCity);
         getFiveDayWeatherData(lastSearchedCity);
     }
 }
 
-renderPreviousSearch();
+renderPreviousSearch(); 
