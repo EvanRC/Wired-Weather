@@ -29,11 +29,64 @@
                         </div>
                         <ul class="container row col-sm-5 cityList"></ul>
                     </div>
+                    <button id="clearButton">Clear</button>
 
                 </aside>
+
+                <div id="currentWeather" class="col-md-9">
+                    <div class="container today">
+                        <h3 id="cityName">Today's Forecast</h3>
+                        <p>Temperature: <span id="temperature"></span>
+                            <img src="" id="tempIcon"/> 
+                        </p>
+                        <p>Wind Speed: <span id="windSpeed"></span></p>
+                        <p>Humidity: <span id="humidity"></span></p>
+                    </div>
+                </div>
             </div>
 
-
+            <div id="futureForecast" class="container text-center">
+                <div class="row fiveDay justify-content-center">
+                    <h3>Five Day Forecast:</h3>
+                    <div class="col-md-2 justify-content-center future">
+                        <p></p>
+                        <p></p>
+                        <p>Temperature: <span></span>
+                        <img src="" /> 
+                    </p>
+                    <p>wind Speed: <span></span></p>
+                    <p>Humidity: <span></span></p>
+                    </div>
+                    <div class="col-md-2 justify-content-center future">
+                        <p id="day2"></p>
+                        <p id="img2"></p>
+                        <p>Temperature: <span id="temp2"></span></p>
+                        <p>wind Speed: <span id="wind2"></span></p>
+                        <p>Humidity: <span id="humid2"></span></p>
+                    </div>
+                    <div class="col-md-2 justify-content-center future">
+                        <p id="day3"></p>
+                        <p id="img3"></p>
+                        <p>Temperature: <span id="temp3"></span></p>
+                        <p>wind Speed: <span id="wind3"></span></p>
+                        <p>Humidity: <span id="humid3"></span></p>
+                    </div>
+                    <div class="col-md-2 justify-content-center future">
+                        <p id="day4"></p>
+                        <p id="img4"></p>
+                        <p>Temperature: <span id="temp4"></span></p>
+                        <p>wind Speed: <span id="wind4"></span></p>
+                        <p>Humidity: <span id="humid4"></span></p>
+                    </div>
+                    <div class="col-md-2 justify-content-center future">
+                        <p id="day5"></p>
+                        <p id="img5"></p>
+                        <p>Temperature: <span id="temp5"></span></p>
+                        <p>wind Speed: <span id="wind5"></span></p>
+                        <p>Humidity: <span id="humid5"></span></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
