@@ -99,7 +99,7 @@ function getFiveDayWeatherData(city) {
             document.getElementById("futureForecast").innerHTML = htmlForecastCards;
         })
 
-        .catch(function(error) {
+        .catch(function (error) {
             //handles error response
             console.log("error: " + error.message);
         })
@@ -123,3 +123,39 @@ function searchCity() {
     citySearch.value = '';
     renderPreviousSearch();
 }
+
+//retrieves and displays stored cities from local storage
+function renderPreviousSearch() {
+    //retries the cities stored in local storage
+    var storedCities = localStorage.getItem('Cities');
+    var sCity = storedCities ? JSON.parse(storedCities) : [];
+
+    //lets get the cityList element
+    var cityList = document.querySelector(".cityList");
+
+    //clears content that is maybe already in the city list
+    cityList.innerHTML = "";
+
+    //adds each city to the list
+    sCity.forEach(function (City) {
+        var button = document.createElement("button");
+        button.innerText = City;
+        button.classList.add("cityButton");
+        cityList.appendChild(button);
+
+        //attatch event listener to the button
+        button.addEventListener('click', function () {
+            getWeatherData(City);
+            getFiveDayWeatherData(City);
+        });
+
+    });
+
+    if (sCity.length > 0) {
+        var lastSearchedCity = sCity[sCity.length - 1];
+        getWeatherData(lastSearchedCity);
+        getFiveDayWeatherData(lastSearchedCity);
+    }
+}
+
+renderPreviousSearch();
