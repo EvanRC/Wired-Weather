@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+    /* css reset */
+}
+
+header {
+    background: linear-gradient(to right, navy, whitesmoke);
+    height: 5rem;
+    /* adds styling to header */
+} 
+
+.srchBox {
+    margin-top: 1rem;
+    margin-left:1rem;
+    padding-bottom: 1rem;
+}
+
+#currentWeather {
+margin-left: 1rem;
+margin-top: 3rem;
+float: right;
+/* current weather styling */
+}
+
+@media (min-width: 768px) {
+    .srchbox{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #currentWeather {
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+    /* media query for larger screens of 768 px  */
+}
+
+.today {
+margin-top: 3rem;
+margin-bottom: 3rem;
+padding-bottom: 10px;
+padding-top: 10px;
+border: solid black 5px;
+border-radius: 20px;
+/* adds stying to the today card */
+}
+
+.fiveday {
+    background-color: navy;
+    color: whitesmoke;
+    align-items: center;
+    /* adds styling to the default five day */
+}
+
+#futureForecast {
+    background-color: navy;
+    color: whitesmoke;
+    align-items: center;
+}
+
+.future {
+    float: left;
+    margin-top: 3rem;
+}
+
+aside {
+    margin-top: 3rem;
+    border: solid black 5px;
+    border-radius: 20px;
+}
+
+#pickTitle {
+    margin-left: 1rem;
+}
+
+#citySearch {
+    margin-left: 1rem;
+}
+
+#searchButton {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.cityList {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 10rem;
+
+}
+
+#clearButton {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
