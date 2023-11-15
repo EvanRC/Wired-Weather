@@ -102,7 +102,7 @@ function getFiveDayWeatherData(city) {
             document.getElementById("futureForecast").innerHTML = htmlForecastCards;
         })
 
-        .catch(function(error) {
+        .catch(function (error) {
             //handles error response
             console.log("error: " + error.message);
         })
@@ -154,7 +154,7 @@ function renderPreviousSearch() {
 
     });
 
-    if(sCity.length > 0) {
+    if (sCity.length > 0) {
         var lastSearchedCity = sCity[sCity.length - 1];
         getWeatherData(lastSearchedCity);
         getFiveDayWeatherData(lastSearchedCity);
