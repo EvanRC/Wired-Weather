@@ -86,9 +86,10 @@ function getFiveDayWeatherData(city) {
             var htmlForecastCards = `<div class='row'>`;
             for (let i = 0; i < data.list.length; i = i + 8) {
                 htmlForecastCards += `
-            <div class="col-sm-2 forecast">
+            <div class="col-sm forecast me-sm-3">
             <p>${dayjs(data.list[i].dt_txt).format('MM/DD/YYYY')}</p>
-            <p></p>
+            <p>
+            </p>
             <p>Temperature: <span>${data.list[i].main.temp} \u00B0F </span>
             <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png">
             </p>
