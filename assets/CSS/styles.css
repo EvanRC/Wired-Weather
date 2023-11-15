@@ -6,50 +6,52 @@
 }
 
 header {
-    background: linear-gradient( to right, navy, whitesmoke);
+    background: linear-gradient(to right, navy, whitesmoke);
     background-color: whitesmoke;
     height: 5rem;
     border-bottom: 5px solid black;
     /* adds styling to header */
-} 
+}
 
 aside {
     border-right: 5px solid black;
+    /* adds styling to the aside element */
 }
 
 .container {
+    /* adds styling to container class */
     margin-left: 0;
 }
 
 #search {
     display: flex;
-    
+
     margin-bottom: 5rem;
-    /* float: left; */
+    /* adds style to search Id */
 }
 
 .srchBox {
     width: 100%;
-
+/* width for search box created */
 }
 
 .seperator {
     border: none;
     height: 1px;
     background-color: black;
+    /* border in between search box and current weather box */
 }
 
 
 
 #currentWeather {
-margin-left: 3rem;
-margin-top: 3rem;
-/* float: right; */
-/* current weather styling */
+    margin-left: 3rem;
+    margin-top: 3rem;
+    /* current weather styling */
 }
 
 @media (min-width: 768px) {
-    .srchbox{
+    .srchbox {
         flex-direction: row;
         align-items: flex-start;
     }
@@ -58,20 +60,21 @@ margin-top: 3rem;
         margin-top: 0;
         margin-left: 2rem;
     }
+
     /* media query for larger screens of 768 px  */
 }
 
 .today {
-margin-left: 5rem;
-padding-bottom: 10px;
-padding-top: 10px;
-/* adds stying to the today card */
+    margin-left: 5rem;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /* adds stying to the today card */
 }
 
 .fiveday {
     background-color: navy;
     color: whitesmoke;
-    
+
     /* adds styling to the default five day */
 }
 
@@ -79,7 +82,7 @@ padding-top: 10px;
     clear: both;
     background-color: rgb(75, 86, 133);
     color: whitesmoke;
-    
+
 
     /* adds stying to the future forecast */
 }
@@ -87,35 +90,41 @@ padding-top: 10px;
 .forecast {
     margin-left: 1rem;
     border: solid black 5px;
+    /* adds styling to forecast class */
 }
 
 .future {
     clear: both;
     display: flex;
     justify-content: space-between;
+    /* adds styling to future class */
+
 
 }
 
 
 #pickTitle {
     margin-left: 1rem;
-    
+    /* adds styling to pickTitle Id */
+
 }
 
 
 
 #searchButton {
-    background-color:skyblue; 
+    background-color: skyblue;
     margin-top: 1rem;
-    
+
     padding-left: 1rem;
     padding-right: 1rem;
+    /* adds styling to searchButton Id */
 }
 
 .cityList {
     margin-top: 1rem;
     width: 100%;
-    
+    /* adds styling to cityList class */
+
 
 }
 
@@ -123,6 +132,6 @@ padding-top: 10px;
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: red
-    
-    
+        /* adds styling the the clearButton class */
+
 }
